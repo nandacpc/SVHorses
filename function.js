@@ -19,14 +19,10 @@ function togglePrismaticOverlay() {
 }
 
 function salvarImagem() {
-    html2canvas(document.querySelector(".horse-image-container"), {
-        scale: 1, // Captura na resolução da tela
-        width: 224,  // Força a captura no tamanho original
-        height: 128,
-        onclone: function (clonedDoc) {
-            var container = clonedDoc.querySelector(".horse-image-container");
-            container.style.transform = ''; // Remove o transform para captura
-        }
+    html2canvas(document.querySelector(".horse-image-container.capture"), {
+        scale: 1,
+        width: 224,
+        height: 128
     }).then(canvas => {
         var link = document.createElement('a');
         link.download = 'cavalo_personalizado.png';
