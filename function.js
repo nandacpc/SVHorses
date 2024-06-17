@@ -18,15 +18,19 @@ function togglePrismaticOverlay() {
     }
 }
 
-function gerarImagem() {
-    html2canvas(document.querySelector(".horse-image-container"), {scale: 1}).then(canvas => {
-        var imgElement = document.getElementById('imagemVisualizacao');
-        imgElement.src = canvas.toDataURL('image/png');
-        document.getElementById('imagemResultante').style.display = 'block'; // Mostra o contêiner com a imagem
+function salvarImagem() {
+    html2canvas(document.querySelector(".horse-image-container")).then(canvas => {
+        var link = document.createElement('a');
+        link.download = 'cavalo_personalizado.png';
+        link.href = canvas.toDataURL('image/png');
+        document.body.appendChild(link); // Adiciona o link ao corpo do documento temporariamente
+        link.click(); // Simula o clique para iniciar o download
+        document.body.removeChild(link); // Remove o link após o download
     }).catch(error => {
-        console.error('Erro ao gerar a imagem:', error);
-        alert('Erro ao gerar a imagem. Por favor, verifique o console para mais detalhes.');
+        console.error('Erro ao salvar a imagem:', error);
+        alert('Erro ao salvar a imagem. Verifique o console para mais detalhes.');
     });
 }
+
 
 
