@@ -19,7 +19,7 @@ function togglePrismaticOverlay() {
 }
 
 function salvarImagem() {
-    html2canvas(document.querySelector(".horse-image-container.capture"), {
+    html2canvas(document.querySelector(".capture"), {
         scale: 1,
         width: 224,
         height: 128
