@@ -1,7 +1,31 @@
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+
 function mudarImagem(nomeArquivo) {
+    // Atualizar a imagem do cavalo
     document.getElementById('horsebig').src = `img/${nomeArquivo}`;
     document.getElementById('horse').src = `img/${nomeArquivo}`;
-    // Não esconde a sela ou o overlay quando muda o cavalo
+
+    // Remover a classe 'active-link' de todos os links
+    document.querySelectorAll('.menu-link').forEach(function(link) {
+        link.classList.remove('active-link');
+    });
+
+    // Adicionar a classe 'active-link' ao link clicado
+    // 'this' refere-se ao elemento que disparou o evento, que é o <a> clicado
+    event.currentTarget.classList.add('active-link');
 }
 
 function mudarSela(nomeSela) {
@@ -12,6 +36,14 @@ function mudarSela(nomeSela) {
     var selabig = document.getElementById('saddlebig');
     selabig.src = `img/${nomeSela}`;
     selabig.style.display = 'block';
+
+    document.querySelectorAll('.menu-link').forEach(function(link) {
+        link.classList.remove('active-link');
+    });
+
+    // Adicionar a classe 'active-link' ao link clicado
+    // 'this' refere-se ao elemento que disparou o evento, que é o <a> clicado
+    event.currentTarget.classList.add('active-link');
 }
 
 function togglePrismaticOverlay() {

@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
@@ -12,34 +15,128 @@
 <body>
     <header>
         <div class="sidebar">
-            <nav class="navbar navbar-expand-lg navbar-light">
-                <ul class="navbar-nav">
-                    <li class="nav-item">Horse
-                        <ul>
-                            <li><a href="#" class="nav-link" onclick="mudarImagem('Andalusian.png')">Andalusian</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarImagem('AppaloosaBlack.png')">Appaloosa Black</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarImagem('AppaloosaBlonde.png')">Appaloosa Blonde</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarImagem('AppaloosaBrown.png')">Appaloosa Brown</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">Saddle
-                        <ul>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_Transparent.png')">No Saddle</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_Black.png')">Black</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_Blonde.png')">Blonde</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_Blue.png')">Blue</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_BrightRed.png')">Bright Red</a></li>
-                            <li><a href="#" class="nav-link" onclick="mudarSela('Saddle_BrightRed.png')">Bright Red</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <label>
-                            <input type="checkbox" id="prismaticCheckbox" onchange="togglePrismaticOverlay()">
-                            Show Prismatic Overlay
-                        </label>
-                    </li>
+            <div id="prismatic">
+                <label>
+                    <input type="checkbox" id="prismaticCheckbox" onchange="togglePrismaticOverlay()">
+                    Show Prismatic Overlay
+                </label>
+            </div>
+            <button type="button" class="collapsible">Horse</button>
+            <div class="content">
+                <ul>
+                    <li><a href="#" class="menu-link active-link" onclick="mudarImagem('Andalusian.png')">Andalusian</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaBlack.png')">Appaloosa Black</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaBlonde.png')">Appaloosa Blonde</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaBrown.png')">Appaloosa Brown</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaFawn.png')">Appaloosa Fawn</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaGrey.png')">Appaloosa Grey</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaMidnight.png')">Appaloosa Midnight</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaRed.png')">Appaloosa Red</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('AppaloosaSilver.png')">Appaloosa Silver</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Azteca.png')">Azteca</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('BlackForest.png')">Black Forest</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('BlackShire.png')">Black Shire</a></li>                            
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Buckskin.png')">Buckskin</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Chestnut.png')">Chestnut</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('ClevelandBay.png')">Cleveland Bay</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Clydesdale.png')">Clydesdale</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Cremello.png')">Cremello</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Epona.png')">Epona</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Fjord.png')">Fjord</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Fresian.png')">Fresian</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Holsteiner.png')">Holsteiner</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('HolsteinerSilver.png')">Holsteiner Silver</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Kathiawari.png')">Kathiawari</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Lipizzan.png')">Lipizzan</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Marwari.png')">Marwari</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PaleDun.png')">Pale Dun</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Palomino.png')">Palomino</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Percheron.png')">Percheron</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoBlack.png')">Pinto Black</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoBlonde.png')">Pinto Blonde</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoBrown.png')">Pinto Brown</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoFawn.png')">Pinto Fawn</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoGrey.png')">Pinto Grey</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoMidnight.png')">Pinto Midnight</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoRed.png')">Pinto Red</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('PintoSilver.png')">Pinto Silver</a></li>  
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('RedShire.png')">Red Shire</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('RoanBay.png')">Roan Bay</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('RoanBlue.png')">Roan Blue</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('RoanStrawberry.png')">Roan Strawberry</a></li>                    
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Shadowmere.png')">Shadowmere</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SilverRockyMt.png')">Silver Rocky Mt</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidBlack.png')">Solid Black</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidBlond.png')">Solid Blond</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidBrown.png')">Solid Brown</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidCream.png')">Solid Cream</a></li> 
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidFawn.png')">Solid Fawn</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidGrey.png')">Solid Grey</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidMidnight.png')">Solid Midnight</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidRed.png')">SolidRed</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidSilver.png')">Solid Silver</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SolidWhite.png')">Solid White</a></li> 
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Sorrel.png')">Sorrel</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledBlack.png')">Speckled Black</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledBlonde.png')">Speckled Blonde</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledBrown.png')">Speckled Brown</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledFawn.png')">Speckled Fawn</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledGrey.png')">Speckled Grey</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledMidnight.png')">Speckled Midnight</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledRed.png')">Speckled Red</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('SpeckledSilver.png')">Speckled Silver</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Thoroughbred.png')">Thoroughbred</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Vanilla.png')">Vanilla</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidAppaloosa.png')">Void Appaloosa</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidBay.png')">Void Bay</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidPinto.png')">Void Pinto</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidShire.png')">Void Shire</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidSolid.png')">Void Solid</a></li> 
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('VoidSpeckled.png')">Void Speckled</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('WhiteShire.png')">White Shire</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Yellow.png')">Yellow</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Teal.png')">Teal</a></li>  
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Turquoise.png')">Turquoise</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Blue.png')">Blue</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Purple.png')">Purple</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Red.png')">Red</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Orange.png')">Orange</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Green.png')">Green</a></li>
+                    <li><a href="#" class="menu-link" onclick="mudarImagem('Pink.png')">Pink</a></li>                         
                 </ul>
-            </nav>
+            </div>
+            <button type="button" class="collapsible">Saddle</button>
+                <div class="content">
+                    <ul>
+                        <li><a href="#" class="menu-link active-link" onclick="mudarSela('Saddle_Transparent.png')">No Saddle</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Black.png')">Black</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Blonde.png')">Blonde</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Blue.png')">Blue</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_BrightRed.png')">Bright Red</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Brown.png')">Brown</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Cream.png')">Cream</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Fawn.png')">Fawn</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Green.png')">Green</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Grey.png')">Grey</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_LightBlue.png')">Light Blue</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_LightPink.png')">Light Pink</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_LightPurple.png')">Light Purple</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Lime.png')">Lime</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Midnight.png')">Midnight</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Orange.png')">Orange</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Pink.png')">Pink</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Purple.png')">Purple</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Red.png')">Red</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Silver.png')">Silver</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Teal.png')">Teal</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Turquoise.png')">Turquoise</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Vanilla.png')">Vanilla</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_White.png')">White</a></li>
+                        <li><a href="#" class="menu-link" onclick="mudarSela('Saddle_Yellow.png')">Yellow</a></li>
+                    </ul>
+                </div>                    
+                
+
         </div>
     </header>
     <main class="main-content">
@@ -55,7 +152,9 @@
                 <img id="saddle" src="img/Saddle_Transparent.png" style="position: absolute; top: 0; left: 0;">
                 <img id="prismaticOverlay" src="img/PrismaticOverlay.png" style="position: absolute; top: 0; left: 0;">
             </div>
-            <button onclick="salvarImagem()" style="margin-top:20px;">Save</button> 
+            <div id="divButton">
+                <button onclick="salvarImagem()">Save</button> 
+            </div>  
  
     </main>
     <script type="text/javascript" src="function.js"></script>
