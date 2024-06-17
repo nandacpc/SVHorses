@@ -1,4 +1,5 @@
 function mudarImagem(nomeArquivo) {
+    document.getElementById('horsebig').src = `img/${nomeArquivo}`;
     document.getElementById('horse').src = `img/${nomeArquivo}`;
     // Não esconde a sela ou o overlay quando muda o cavalo
 }
@@ -7,6 +8,10 @@ function mudarSela(nomeSela) {
     var sela = document.getElementById('saddle');
     sela.src = `img/${nomeSela}`;
     sela.style.display = 'block'; // Garante que a sela é mostrada
+
+    var selabig = document.getElementById('saddlebig');
+    selabig.src = `img/${nomeSela}`;
+    selabig.style.display = 'block';
 }
 
 function togglePrismaticOverlay() {
@@ -15,6 +20,13 @@ function togglePrismaticOverlay() {
         overlay.style.display = 'block'; // Mostra o overlay
     } else {
         overlay.style.display = 'none'; // Esconde o overlay
+    }
+
+    var overlaybig = document.getElementById('prismaticOverlaybig');
+    if (document.getElementById('prismaticCheckbox').checked) {
+        overlaybig.style.display = 'block'; // Mostra o overlay
+    } else {
+        overlaybig.style.display = 'none'; // Esconde o overlay
     }
 }
 
