@@ -31,40 +31,32 @@ function togglePrismaticOverlay() {
 }
 
 function salvarImagem() {
-    var images = document.querySelector(".capture").getElementsByTagName('img');
-    var loaded = 0;
-    for (let i = 0; i < images.length; i++) {
-        if (images[i].complete && images[i].naturalHeight !== 0) {
-            loaded++;
-        } else {
-            images[i].onload = () => {
-                loaded++;
-                if (loaded === images.length) {
-                    captureImage();
-                }
-            };
-            images[i].onerror = () => {
-                alert("Erro ao carregar uma das imagens.");
-            };
-        }
-    }
-    if (loaded === images.length) {
-        captureImage();
-    }
-}
+    // Seleciona o contêiner de captura
+    var captureContainer = document.querySelector(".capture");
+    
+    // Garante que a opacity é ajustada apenas durante a captura
+    captureContainer.style.opacity = 1; // Torna o contêiner visível apenas para captura
 
-function captureImage() {
-    html2canvas(document.querySelector(".capture"), {
+    html2canvas(captureContainer, {
         scale: 1,
-        width: 224,
-        height: 128
+        width: 224,  // Largura desejada para captura
+        height: 128, // Altura desejada para captura
+        onclone: function(clonedDocument) {
+            // Ajusta a opacity no documento clonado
+            var clonedContainer = clonedDocument.querySelector(".capture");
+            clonedContainer.style.opacity = 1;
+        }
     }).then(canvas => {
+        // Cria um link para download da imagem
         var link = document.createElement('a');
         link.download = 'cavalo_personalizado.png';
         link.href = canvas.toDataURL('image/png');
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
+
+        // Restaura a opacity original após a captura
+        captureContainer.style.opacity = 0;
     }).catch(error => {
         console.error('Erro ao salvar a imagem:', error);
         alert('Erro ao salvar a imagem. Verifique o console para mais detalhes.');
