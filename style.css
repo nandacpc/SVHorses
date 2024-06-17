@@ -2,6 +2,6 @@
     position: relative;
     width: 224px;   /* Largura original */
     height: 128px;  /* Altura original */
-    transform: scale(2); /* Ajuste o fator de escala conforme necessário */
+    transform: scale(1.2); /* Ajuste o fator de escala conforme necessário */
     transform-origin: top left; /* Mantém o contêiner alinhado corretamente */
 }
