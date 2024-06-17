@@ -1,3 +1,28 @@
+
+/* Estilos para a barra lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px; /* ou a largura que você desejar */
+    height: 100%;
+    background-color: #f8f9fa; /* cor de fundo leve para a barra lateral */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* sombra leve para efeito 3D */
+    overflow-y: auto; /* permite rolagem se o conteúdo exceder a altura da tela */
+}
+
+/* Estilos para centralizar o conteúdo do main */
+.main-content {
+    margin-left: 250px; /* deve ser igual à largura da sidebar */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* altura mínima para centralização vertical */
+}
+
+/* Estilos para a imagem e componentes dentro do main para melhor visualização */
 .display {
     position: relative;
     width: 224px;   /* Largura original */
